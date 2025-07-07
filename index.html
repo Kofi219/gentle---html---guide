@@ -1,159 +1,261 @@
-<!DOCTYPE html>
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gentle HTML Guide - Learn HTML Easily</title>
-  <meta name="description" content="A simple and clear HTML tutorial for beginners. Learn how to code websites from scratch with step-by-step instructions.">
-  <meta name="keywords" content="HTML, learn HTML, beginner coding, web development, HTML guide">
-  <meta name="author" content="Kofi Adu Serbeh">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Site Verification (optional, if needed) -->
-  <meta name="google-site-verification" content="WEnAa2vVCvXDIjHzvxf5BbTHEw2sbhYUiiqLQG5REaU" />
-
-  <!-- Open Graph / Social Media Preview -->
-  <meta property="og:title" content="Gentle HTML Guide - Learn HTML Easily">
-  <meta property="og:description" content="Step-by-step HTML lessons for absolute beginners. Start coding today!">
-  <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg">
-  <meta property="og:url" content="https://kofi219.github.io/gentle---html---guide/">
-  <meta property="og:type" content="website">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <title>Master HTML with Confidence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* (All your CSS stays the same...) */
-  </style>
-</head>
-<body>
-  <!-- (All your body content stays the same...) -->
-</body>
-</html> 
--size: 22px;
+    :root {
+      --bg: #f0f9ff;
+      --text: #2e3d49;
+      --section-bg: #ffffff;
+      --highlight: #0077c2;
+      --accent: #00bcd4;
+      --footer-bg: #f3f3f3;
     }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --section-bg: #1f1f1f;
+      --highlight: #2196f3;
+      --accent: #00acc1;
+      --footer-bg: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--highlight), var(--accent));
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      animation: fadeInDown 1s ease-out;
+      position: relative;
+    }
+
+    header img.logo {
+      width: 100px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: var(--highlight);
+      border: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark .toggle-btn {
+      background: #333;
+      color: white;
+    }
+
+    .section {
+      background: var(--section-bg);
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background 0.3s;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: var(--highlight);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
     p, li {
       font-size: 17px;
-      line-height: 1.7;
+      margin-bottom: 12px;
     }
+
     img {
       width: 100%;
-      max-width: 350px;
-      display: block;
-      margin: 15px auto;
+      max-width: 400px;
       border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    img:hover { transform: scale(1.05); }
-    ul { padding-left: 20px; }
+
+    img:hover {
+      transform: scale(1.04);
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
     .note {
       background-color: #fff9c4;
       border-left: 6px solid #fdd835;
       padding: 18px;
-      margin: 30px 25px;
       border-radius: 15px;
+      margin-top: 30px;
       font-style: italic;
-      color: #555;
     }
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #444;
-      font-size: 14px;
-      background-color: #eeeeee;
-      border-top: 2px solid #ccc;
-      margin-top: 40px;
-    }
+
     .btn {
       display: inline-block;
-      background: linear-gradient(45deg, #0288d1, #26c6da);
+      background: linear-gradient(45deg, var(--highlight), var(--accent));
       color: white;
       padding: 10px 20px;
-      margin-top: 10px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease;
+      margin-top: 10px;
     }
+
     .btn:hover {
-      background: linear-gradient(45deg, #0277bd, #00acc1);
+      filter: brightness(1.1);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 15px;
+      background-color: var(--footer-bg);
+      border-top: 2px solid #ccc;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @media (max-width: 600px) {
-      .section { margin: 15px; }
-      header h1 { font-size: 22px; }
-      img { max-width: 90%; }
+      .section {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
     <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo">
-    <h1>How to Become a Master in HTML Easily</h1>
+    <h1>How to Become a Master in HTML</h1>
+    <p>✨ Your friendly, modern guide to HTML mastery!</p>
   </header>
 
   <div class="section">
     <h2>👋 Welcome to Your HTML Journey</h2>
-    <p>
-      This guide is designed to help beginners like you learn HTML step by step. 
-      Whether you're building your first website or just exploring coding, 
-      you'll find clear steps, examples, and tips to help you master HTML quickly and with confidence.
-    </p>
+    <p>This guide is made just for you -- a beginner ready to conquer HTML! Follow along and you'll learn how to build websites from scratch, step by step.</p>
   </div>
 
   <div class="section">
-    <h2>1. Watch Tutorial Videos</h2>
-    <p>
-      Begin your journey with well-structured tutorials. 
-      <strong>EJ Media</strong> offers easy-to-follow lessons that break down HTML concepts into clear, practical steps.
-    </p>
+    <h2>1. 🎥 Watch Tutorial Videos</h2>
+    <p>Start with tutorials from <strong>EJ Media</strong>. They explain everything in a way that's easy and clear.</p>
     <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch tutorials">
-    <a class="btn" href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank">Watch EJ Media Now</a>
+    <a class="btn" href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank">📺 Watch Now</a>
   </div>
 
   <div class="section">
-    <h2>2. Practice With the Tutorials</h2>
-    <p>Don't just watch — type along. Try the code yourself, make changes, and test it live to learn deeply.</p>
+    <h2>2. 💻 Practice With the Code</h2>
+    <p>Don't just watch -- type along, edit code, and see what changes. That's how you'll truly learn!</p>
     <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice coding">
   </div>
 
   <div class="section">
-    <h2>3. Learn Basic HTML Tags 🧠</h2>
-    <p>
-      Master essential tags like 
-      <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, 
-      <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, 
-      and <code>&lt;a&gt;</code>. These are the building blocks of every webpage.
-    </p>
+    <h2>3. 🧠 Learn Basic Tags</h2>
+    <p>Understand tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
   </div>
 
   <div class="section">
-    <h2>4. Know Your Keyboard Shortcuts ⚡</h2>
-    <p>
-      Learn to type symbols like 
-      <code>&lt;&gt;</code> <code>{ }</code> <code>;</code> <code>:</code> 
-      and master time-saving keyboard shortcuts like <code>Ctrl+S</code> (save) and <code>Ctrl+Z</code> (undo).
-    </p>
+    <h2>4. ⌨️ Know Keyboard Shortcuts</h2>
+    <p>Learn symbols like <code>&lt;&gt;</code>, <code>{}</code>, <code>;</code>, <code>:</code> and handy keys like <code>Ctrl+S</code> (Save) and <code>Ctrl+Z</code> (Undo).</p>
   </div>
 
   <div class="section">
-    <h2>5. Set Your Coding Goals</h2>
+    <h2>5. 🚀 Set Goals</h2>
     <ul>
-      <li>Create a personal or portfolio website</li>
-      <li>Advance to CSS & JavaScript</li>
-      <li>Teach and inspire others to code</li>
+      <li>Make a personal portfolio</li>
+      <li>Learn CSS & JavaScript next</li>
+      <li>Teach others and share your code</li>
     </ul>
   </div>
 
-  <div class="note">
-    <strong>Note:</strong> Completing HTML and CSS makes you a coder. 
-    But to become a real programmer, build full projects and ask skilled friends — not just Google — for better understanding.
+  <div class="section note">
+    <strong>Note:</strong> HTML and CSS are your foundation. To grow into a true developer, build real-world projects and keep experimenting!
+  </div>
+
+  <div class="section">
+    <h2>🌐 Useful Learning Resources</h2>
+    <p>These platforms will guide you with HTML, CSS, and web design:</p>
+    <ul>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
+      <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
+      <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+      <li><a href="https://www.youtube.com/c/ProgrammingwithMosh" target="_blank">Programming with Mosh</a></li>
+      <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+    </ul>
   </div>
 
   <footer>
-    &copy; 2025 Kofi Adu Serbeh. All rights reserved.
+    &copy; 2025 <strong>Kofi Adu Serbeh</strong> -- Crafted with care and code 💙
   </footer>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle("dark");
+
+      const btn = document.querySelector(".toggle-btn");
+      if (body.classList.contains("dark")) {
+        btn.textContent = "☀️ Light Mode";
+      } else {
+        btn.textContent = "🌙 Dark Mode";
+      }
+    }
+  </script>
+
 </body>
 </html>
