@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kofi219.github.io/gentle---html---guide/sitemap.xml
