@@ -1,41 +1,70 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Master HTML with Confidence</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="description" content="Master HTML with this beginner-friendly, visually rich guide packed with tips, tutorials, and motivation to build your first website confidently.">
+  <meta name="keywords" content="HTML tutorial, learn HTML, beginner web development, HTML tags, build website">
+  <meta name="author" content="Kofi Adu Serbeh">
+  <meta property="og:title" content="How to Master HTML - Beginner Friendly Guide" />
+  <meta property="og:description" content="Learn HTML from scratch with simple explanations, visuals, and motivation. Start building your website today!" />
+  <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
+  <meta property="og:url" content="https://kofi219.github.io/gentle---html---guide/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Master HTML with Confidence" />
+  <meta name="twitter:description" content="A beautiful guide for beginners to learn HTML and build websites easily." />
+  <meta name="twitter:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
+  <link rel="canonical" href="https://kofi219.github.io/gentle---html---guide/" />
+  <title>How to Master HTML - Beginner Friendly Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }body {
+    :root {
+      --primary-color: #0077c2;
+      --accent-color: #00bcd4;
+      --light-bg: #f0f9ff;
+      --dark-bg: #121212;
+      --light-text: #2e3d49;
+      --dark-text: #e0e0e0;
+      --card-bg: #ffffff;
+      --card-bg-dark: #1f1f1f;
+    }* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-  transition: background 0.4s ease, color 0.4s ease;
+  background: var(--light-bg);
+  color: var(--light-text);
+  transition: background 0.5s, color 0.5s;
 }
 
-:root {
-  --background: #f0f9ff;
-  --text: #2e3d49;
-  --section-bg: #ffffff;
-  --note-bg: #fff9c4;
-  --note-border: #fdd835;
-  --footer-bg: #f3f3f3;
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
 }
 
-.dark-mode {
-  --background: #1a1a1a;
-  --text: #e0e0e0;
-  --section-bg: #2a2a2a;
-  --note-bg: #333333;
-  --note-border: #ffc107;
-  --footer-bg: #121212;
+.toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  background: #ffffffaa;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.toggle:hover {
+  background: #eeeeee;
 }
 
 header {
-  background: linear-gradient(120deg, #0077c2, #00bcd4);
+  background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
   color: white;
   text-align: center;
   padding: 60px 20px;
@@ -57,24 +86,18 @@ h1 {
   margin-bottom: 10px;
 }
 
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
 .section {
-  background: var(--section-bg);
+  background: var(--card-bg);
   margin: 40px auto;
   max-width: 800px;
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.5s, color 0.5s;
+}
+
+body.dark .section {
+  background: var(--card-bg-dark);
 }
 
 .section:hover {
@@ -82,7 +105,7 @@ h1 {
 }
 
 h2 {
-  color: #01579b;
+  color: var(--primary-color);
   font-size: 24px;
   margin-bottom: 12px;
 }
@@ -112,8 +135,8 @@ ul {
 }
 
 .note {
-  background-color: var(--note-bg);
-  border-left: 6px solid var(--note-border);
+  background-color: #fff9c4;
+  border-left: 6px solid #fdd835;
   padding: 18px;
   border-radius: 15px;
   margin-top: 30px;
@@ -122,7 +145,7 @@ ul {
 
 .btn {
   display: inline-block;
-  background: linear-gradient(45deg, #0288d1, #26c6da);
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   color: white;
   padding: 10px 20px;
   border-radius: 30px;
@@ -140,10 +163,9 @@ footer {
   text-align: center;
   padding: 25px;
   font-size: 15px;
-  background-color: var(--footer-bg);
+  background-color: #f3f3f3;
   border-top: 2px solid #ccc;
   margin-top: 40px;
-  color: var(--text);
 }
 
 @keyframes fadeInDown {
@@ -165,48 +187,57 @@ footer {
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>  <header>
+  <div class="toggle" onclick="toggleMode()" id="modeToggle">🌚</div>
+  <header>
     <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo">
     <h1>How to Become a Master in HTML</h1>
     <p>✨ Your friendly, modern guide to HTML mastery!</p>
   </header>  <div class="section">
     <h2>👋 Welcome to Your HTML Journey</h2>
-    <p>This guide is made just for you -- a beginner ready to conquer HTML! Follow along and you'll learn how to build websites from scratch, step by step.</p>
+    <p>This guide is made just for you -- a beginner ready to conquer HTML! Learn step by step with confidence.</p>
   </div>  <div class="section">
     <h2>1. 🎥 Watch Tutorial Videos</h2>
-    <p>Start with tutorials from <strong>EJ Media</strong>. They explain everything in a way that's easy and clear.</p>
+    <p>Start with tutorials from <strong>EJ Media</strong>. They explain everything clearly.</p>
     <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch tutorials">
     <a class="btn" href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank">📺 Watch Now</a>
   </div>  <div class="section">
     <h2>2. 💻 Practice With the Code</h2>
-    <p>Don't just watch -- type along, edit code, and see what changes. That's how you'll truly learn!</p>
+    <p>Don't just watch -- type along and experiment to truly learn!</p>
     <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice coding">
   </div>  <div class="section">
     <h2>3. 🧠 Learn Basic Tags</h2>
     <p>Understand tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
   </div>  <div class="section">
     <h2>4. ⌨️ Know Keyboard Shortcuts</h2>
-    <p>Learn symbols like <code>&lt;&gt;</code>, <code>{}</code>, <code>;</code>, <code>:</code> and handy keys like <code>Ctrl+S</code> (Save) and <code>Ctrl+Z</code> (Undo).</p>
+    <p>Learn helpful symbols and shortcuts like <code>Ctrl+S</code> and <code>Ctrl+Z</code>.</p>
   </div>  <div class="section">
     <h2>5. 🚀 Set Goals</h2>
     <ul>
-      <li>Make a personal portfolio</li>
+      <li>Create a personal portfolio</li>
       <li>Learn CSS & JavaScript next</li>
-      <li>Teach others and share your code</li>
+      <li>Inspire others with your journey</li>
     </ul>
   </div>  <div class="section">
-    <h2>🌈 Stay Motivated</h2>
-    <p>No matter how tough it gets, don't give up. Take breaks when needed, but never stop pushing forward. You've got this 💪!</p>
-    <p>Remember, learning to code is like building a house -- one brick at a time 🧱.</p>
+    <h2>🎯 Resources</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
+    </ul>
   </div>  <div class="section note">
-    <strong>Note:</strong> HTML and CSS are your foundation. To grow into a true developer, build real-world projects and keep experimenting!
+    <strong>Motivation:</strong> Breaks are okay. Keep learning, never give up.
   </div>  <footer>
-    &copy; 2025 Kofi Adu Serbeh -- Crafted with care and love ❤️
+    &copy; 2025 Kofi Adu Serbeh -- Crafted with care and love 💙
   </footer>  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      const icon = document.querySelector('.theme-toggle');
-      icon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    function toggleMode() {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      body.classList.toggle('dark');
+      toggle.textContent = body.classList.contains('dark') ? '🌞' : '🌚';
+    }
+
+    window.onload = () => {
+      const toggle = document.getElementById('modeToggle');
+      toggle.textContent = document.body.classList.contains('dark') ? '🌞' : '🌚';
     }
   </script></body>
 </html>
