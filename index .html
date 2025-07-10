@@ -1,14 +1,14 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
   <meta name="google-site-verification" content="W8nHLxdw06fS_2tTdcUJacD4yqS9pNnUsfZPWcT7EL8" />
-  <meta name="description" content="Master HTML with this beginner-friendly, visually rich guide packed with tips, tutorials, and motivation to build your first website confidently." />
-  <meta name="keywords" content="HTML tutorial, learn HTML, beginner web development, HTML tags, build website" />
-  <meta name="author" content="Kofi Adu Serbeh" />
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="description" content="Master HTML with this beginner-friendly, visually rich guide packed with tips, tutorials, and motivation to build your first website confidently.">
+  <meta name="keywords" content="HTML tutorial, learn HTML, beginner web development, HTML tags, build website">
+  <meta name="author" content="Kofi Adu Serbeh">
   <meta property="og:title" content="How to Master HTML - Beginner Friendly Guide" />
   <meta property="og:description" content="Learn HTML from scratch with simple explanations, visuals, and motivation. Start building your website today!" />
   <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
@@ -19,7 +19,7 @@
   <meta name="twitter:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
   <link rel="canonical" href="https://kofi219.github.io/gentle---html---guide/" />
   <title>How to Master HTML - Beginner Friendly Guide</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #0077c2;
@@ -31,25 +31,21 @@
       --card-bg: #ffffff;
       --card-bg-dark: #1f1f1f;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--light-bg);
       color: var(--light-text);
       transition: background 0.5s, color 0.5s;
     }
-
     body.dark {
       background: var(--dark-bg);
       color: var(--dark-text);
     }
-
     header {
       background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
       color: white;
@@ -59,7 +55,6 @@
       border-bottom-right-radius: 50px;
       animation: fadeInDown 1s ease-out;
     }
-
     header img.logo {
       width: 100px;
       border-radius: 50%;
@@ -67,7 +62,6 @@
       margin-bottom: 15px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-
     .toggle {
       position: absolute;
       top: 20px;
@@ -75,12 +69,10 @@
       font-size: 24px;
       cursor: pointer;
     }
-
     h1 {
       font-size: 32px;
       margin-bottom: 10px;
     }
-
     .section {
       background: var(--card-bg);
       margin: 40px auto;
@@ -90,26 +82,21 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, background 0.5s, color 0.5s;
     }
-
     body.dark .section {
       background: var(--card-bg-dark);
     }
-
     .section:hover {
       transform: translateY(-5px);
     }
-
     h2 {
       color: var(--primary-color);
       font-size: 24px;
       margin-bottom: 12px;
     }
-
     p, li {
       font-size: 17px;
       margin-bottom: 12px;
     }
-
     img {
       width: 100%;
       max-width: 400px;
@@ -119,16 +106,13 @@
       box-shadow: 0 3px 12px rgba(0,0,0,0.1);
       transition: 0.3s ease;
     }
-
     img:hover {
       transform: scale(1.04);
     }
-
     ul {
       list-style: square;
       padding-left: 20px;
     }
-
     .note {
       background-color: #fff9c4;
       border-left: 6px solid #fdd835;
@@ -137,7 +121,6 @@
       margin-top: 30px;
       font-style: italic;
     }
-
     .btn {
       display: inline-block;
       background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
@@ -149,11 +132,9 @@
       transition: all 0.3s ease;
       margin-top: 10px;
     }
-
     .btn:hover {
       background: linear-gradient(45deg, #0277bd, #00acc1);
     }
-
     footer {
       text-align: center;
       padding: 25px;
@@ -162,18 +143,15 @@
       border-top: 2px solid #ccc;
       margin-top: 40px;
     }
-
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @media (max-width: 600px) {
       .section {
         margin: 20px;
         padding: 20px;
       }
-
       header h1 {
         font-size: 22px;
       }
@@ -181,51 +159,43 @@
   </style>
 </head>
 <body>
-  <div class="toggle" onclick="document.body.classList.toggle('dark')" title="Toggle dark/light mode">🌞 / 🌚</div>
-
+  <div class="toggle" onclick="toggleMode()">🌞 / 🌚</div>
   <header>
-    <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo" />
+    <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo">
     <h1>How to Become a Master in HTML</h1>
     <p>✨ Your friendly, modern guide to HTML mastery!</p>
   </header>
-
   <div class="section">
     <h2>👋 Welcome to Your HTML Journey</h2>
-    <p>This guide is made just for you -- a beginner ready to conquer HTML! Learn step by step with confidence.</p>
+    <p>This guide is made just for you — a beginner ready to conquer HTML! Learn step by step with confidence.</p>
   </div>
-
   <div class="section">
-    <h2>1. 🎥 Watch Tutorial Videos</h2>
+    <h2>🎥 1. Watch Tutorial Videos</h2>
     <p>Start with tutorials from <strong>EJ Media</strong>. They explain everything clearly.</p>
-    <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch tutorials" />
+    <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch tutorials">
     <a class="btn" href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank">📺 Watch Now</a>
   </div>
-
   <div class="section">
-    <h2>2. 💻 Practice With the Code</h2>
-    <p>Don't just watch -- type along and experiment to truly learn!</p>
-    <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice coding" />
+    <h2>💻 2. Practice With the Code</h2>
+    <p>Don’t just watch — type along and experiment to truly learn!</p>
+    <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice coding">
   </div>
-
   <div class="section">
-    <h2>3. 🧠 Learn Basic Tags</h2>
+    <h2>🧠 3. Learn Basic Tags</h2>
     <p>Understand tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
   </div>
-
   <div class="section">
-    <h2>4. ⌨️ Know Keyboard Shortcuts</h2>
+    <h2>⌨️ 4. Know Keyboard Shortcuts</h2>
     <p>Learn helpful symbols and shortcuts like <code>Ctrl+S</code> and <code>Ctrl+Z</code>.</p>
   </div>
-
   <div class="section">
-    <h2>5. 🚀 Set Goals</h2>
+    <h2>🚀 5. Set Goals</h2>
     <ul>
       <li>Create a personal portfolio</li>
       <li>Learn CSS & JavaScript next</li>
       <li>Inspire others with your journey</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>🎯 Resources</h2>
     <ul>
@@ -233,13 +203,16 @@
       <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
     </ul>
   </div>
-
   <div class="section note">
-    <strong>Motivation:</strong> Breaks are okay. Keep going. You're learning something powerful. Every mistake is a step toward mastery. 🌟 Never give up!
+    <strong>Motivation:</strong> Breaks are okay. Keep learning, one tag at a time. 💪
   </div>
-
   <footer>
-    &copy; 2025 Kofi Adu Serbeh -- Crafted with care and love 💙
+    Crafted with care and love by Kofi Serbeh ❤️
   </footer>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
