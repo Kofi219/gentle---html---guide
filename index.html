@@ -22,171 +22,139 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #3084d4;
-      --accent-color: #00bfa5;
-      --light-bg: #f5faff;
+      --primary-color: #0077c2;
+      --accent-color: #00bcd4;
+      --light-bg: #f8fcff;
       --dark-bg: #121212;
-      --light-text: #1f2d3d;
-      --dark-text: #f0f0f0;
+      --light-text: #2e3d49;
+      --dark-text: #e0e0e0;
       --card-bg: #ffffff;
-      --card-bg-dark: #1e1e1e;
+      --card-bg-dark: #1f1f1f;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--light-bg);
       color: var(--light-text);
-      line-height: 1.6;
       font-size: 16px;
-      transition: background 0.4s ease, color 0.4s ease;
+      line-height: 1.6;
+      transition: background 0.5s, color 0.5s;
     }
-
     body.dark {
       background: var(--dark-bg);
       color: var(--dark-text);
     }
-
     header {
-      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
       color: white;
       text-align: center;
       padding: 50px 20px;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
+      animation: fadeInDown 1s ease-out;
     }
-
-    .logo {
+    header img.logo {
       width: 90px;
       border-radius: 50%;
-      border: 3px solid #fff;
+      border: 4px solid #fff;
       margin-bottom: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-
     .toggle {
       position: absolute;
-      top: 15px;
+      top: 20px;
       right: 20px;
       font-size: 22px;
       cursor: pointer;
     }
-
     h1 {
       font-size: 28px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
     .section {
       background: var(--card-bg);
+      margin: 35px auto;
       max-width: 800px;
-      margin: 40px auto;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: background 0.4s, color 0.4s;
+      padding: 20px 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background 0.5s, color 0.5s;
     }
-
     body.dark .section {
       background: var(--card-bg-dark);
     }
-
-    .section h2 {
-      font-size: 22px;
-      color: var(--primary-color);
-      margin-bottom: 12px;
+    .section:hover {
+      transform: translateY(-4px);
     }
-
+    h2 {
+      color: var(--primary-color);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
     p, li {
       font-size: 16px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-
-    ul {
-      padding-left: 20px;
-      list-style: disc;
-    }
-
     img {
       width: 100%;
       max-width: 400px;
-      margin: 20px auto;
       border-radius: 12px;
       display: block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      margin: 20px auto;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
     }
-
+    img:hover {
+      transform: scale(1.03);
+    }
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+    .note {
+      background-color: #fff9c4;
+      border-left: 6px solid #fdd835;
+      padding: 16px;
+      border-radius: 15px;
+      margin-top: 30px;
+      font-style: italic;
+    }
     .btn {
       display: inline-block;
-      background: var(--primary-color);
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
       color: white;
       padding: 10px 20px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      margin-top: 10px;
     }
-
     .btn:hover {
-      background: var(--accent-color);
+      background: linear-gradient(45deg, #0277bd, #00acc1);
     }
-
-    .note {
-      background-color: #fff8c6;
-      border-left: 5px solid #fdd835;
-      padding: 16px;
-      border-radius: 12px;
-      margin-top: 30px;
-      font-style: italic;
-    }
-
-    .scroll-notice {
-      white-space: nowrap;
-      overflow: hidden;
-      box-sizing: border-box;
-      padding: 12px;
-      background: #d0f0ff;
-      color: #003d66;
-      font-weight: bold;
-      text-align: center;
-      animation: scroll-left 20s linear infinite;
-    }
-
-    .scroll-notice a {
-      color: #0073e6;
-      margin-left: 20px;
-      text-decoration: underline;
-    }
-
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
     footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      background: #f5f5f5;
-      margin-top: 50px;
+      background-color: #f3f3f3;
+      border-top: 2px solid #ccc;
+      margin-top: 40px;
     }
-
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @media (max-width: 600px) {
       .section {
         margin: 20px;
         padding: 20px;
       }
-
-      h1 {
-        font-size: 22px;
-      }
-
-      .section h2 {
+      header h1 {
         font-size: 20px;
       }
     }
@@ -197,66 +165,70 @@
   <header>
     <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo">
     <h1>How to Become a Master in HTML</h1>
-    <p>✨ A calm, beginner-friendly journey into web development!</p>
+    <p>✨ Your friendly, modern guide to HTML mastery!</p>
   </header>
-
-  <div class="scroll-notice">
-    📘 Want to master HTML & CSS faster? Try this top-rated book:
-    <a href="https://www.amazon.com/s?k=html+and+css+book" target="_blank">"Design and Build Websites" by Jon Duckett</a>
-  </div>
 
   <div class="section">
     <h2>👋 Welcome to Your HTML Journey</h2>
-    <p>This guide is made just for you — a beginner ready to conquer HTML with ease and calm confidence.</p>
+    <p>This guide is made just for you — a beginner ready to conquer HTML! Learn step by step with confidence.</p>
   </div>
 
   <div class="section">
     <h2>🎥 1. Watch Tutorial Videos</h2>
-    <p>Start with tutorials from <strong>EJ Media</strong>. Their explanations are clear and easy to follow.</p>
+    <p>Start with tutorials from <strong>EJ Media</strong>. They explain everything clearly.</p>
     <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch tutorials">
     <a class="btn" href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank">📺 Watch Now</a>
   </div>
 
   <div class="section">
-    <h2>💻 2. Practice With Code</h2>
-    <p>Don't just watch — type the code yourself and play around to build strong skills.</p>
+    <h2>💻 2. Practice With the Code</h2>
+    <p>Don’t just watch — type along and experiment to truly learn!</p>
     <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice coding">
   </div>
 
   <div class="section">
-    <h2>🧠 3. Learn Basic HTML Tags</h2>
-    <p>Master tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
+    <h2>🧠 3. Learn Basic Tags</h2>
+    <p>Understand tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
   </div>
 
   <div class="section">
-    <h2>⌨️ 4. Use Helpful Shortcuts</h2>
-    <p>Shortcuts like <code>Ctrl+S</code>, <code>Ctrl+Z</code>, and <code>Ctrl+V</code> can save time while coding.</p>
+    <h2>⌨️ 4. Know Keyboard Shortcuts</h2>
+    <p>Learn helpful symbols and shortcuts like <code>Ctrl+S</code>, <code>Ctrl+V</code>, and more.</p>
   </div>
 
   <div class="section">
-    <h2>🚀 5. Set Realistic Goals</h2>
+    <h2>🚀 5. Set Your Web Dev Goals</h2>
     <ul>
-      <li>Create a simple portfolio website</li>
-      <li>Move on to CSS & JavaScript after this</li>
-      <li>Share your progress and inspire others</li>
+      <li>Create your personal portfolio</li>
+      <li>Learn CSS & JavaScript next</li>
+      <li>Inspire others with your progress</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2>🎯 Useful Resources</h2>
+    <h2>🎯 Resources</h2>
     <ul>
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
       <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
     </ul>
-    <p><strong>Note:</strong> Time and effort spent learning HTML will pay off. Investing in a helpful book or course can speed things up.</p>
+    <p><strong>Tip:</strong> Make time to learn — and invest in your growth. One great way is to read expert books like the one below.</p>
+  </div>
+
+  <!-- BOOK PROMO SECTION -->
+  <div class="section">
+    <h2>📘 Recommended Book</h2>
+    <p>If you're serious about mastering HTML & CSS, I highly recommend this amazing book:</p>
+    <a class="btn" href="https://www.amazon.com/HTML-CSS/dp/3827332141" target="_blank">
+      HTML & CSS: Design and Build Websites by Jon Duckett
+    </a>
   </div>
 
   <div class="section note">
-    <strong>Motivation:</strong> Don’t rush — one tag at a time. Breaks are okay. Keep going. 💪
+    <strong>Motivation:</strong> Breaks are okay. Keep learning, one tag at a time. 💪
   </div>
 
   <footer>
-    Crafted with calm energy and clarity by Kofi Serbeh ❤️
+    Crafted with care and love by Kofi Serbeh ❤️
   </footer>
 
   <script>
