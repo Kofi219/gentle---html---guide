@@ -1,280 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="W8nHLxdw06fS_2tTdcUJacD4yqS9pNnUsfZPWcT7EL8" />
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Master HTML with this easy, beginner-friendly guide full of clear explanations, visuals, and helpful resources to get you started in web development.">
-  <meta name="keywords" content="learn HTML, HTML tutorial, web development, beginner web design, HTML for beginners, Kofi Serbeh">
+  <meta name="description" content="Master HTML with this beginner-friendly, visually rich guide packed with tips, tutorials, and motivation to build your first website confidently.">
   <meta name="author" content="Kofi Adu Serbeh">
-  <meta property="og:title" content="Learn HTML the Easy Way - Full Beginner Guide" />
-  <meta property="og:description" content="Learn HTML from scratch with simple tutorials and tips. Start building your own website today!" />
+  <meta property="og:title" content="How to Master HTML - Beginner Friendly Guide" />
+  <meta property="og:description" content="Learn HTML from scratch with simple explanations, visuals, and motivation. Start building your website today!" />
   <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
   <meta property="og:url" content="https://kofi219.github.io/gentle---html---guide/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HTML Guide for Beginners" />
-  <meta name="twitter:description" content="Start learning HTML easily and build your first website step-by-step." />
-  <meta name="twitter:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
-  <link rel="canonical" href="https://kofi219.github.io/gentle---html---guide/" />
-  <title>HTML Made Simple – Beginner Guide</title>
+  <title>How to Master HTML - Beginner Friendly Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --primary: #2a7fc1;
-      --accent: #22d3ee;
-      --light-bg: #f7fafc;
-      --dark-bg: #1a1a1a;
-      --text-light: #333;
-      --text-dark: #eee;
-      --card-light: #ffffff;
-      --card-dark: #262626;
-      --highlight: #facc15;
+      --primary-color: #2a82da;
+      --accent-color: #00bcd4;
+      --light-bg: #f5faff;
+      --dark-bg: #121212;
+      --light-text: #222;
+      --dark-text: #eee;
+      --card-bg: #ffffff;
+      --card-bg-dark: #1e1e1e;
     }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--light-bg);
-      color: var(--text-light);
-      transition: all 0.5s ease;
+      color: var(--light-text);
+      transition: background 0.3s, color 0.3s;
       line-height: 1.6;
+      font-size: 15px;
     }
-
     body.dark {
       background: var(--dark-bg);
-      color: var(--text-dark);
+      color: var(--dark-text);
     }
-
+    header {
+      background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+      padding: 60px 20px 80px;
+      color: white;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      position: relative;
+    }
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-container img {
+      width: 60px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .logo-container small {
+      font-size: 12px;
+      color: #e0e0e0;
+      margin-top: 2px;
+    }
     .toggle {
-      position: fixed;
+      position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 1.4rem;
-      cursor: pointer;
-      z-index: 999;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      background-color: rgba(255, 255, 255, 0.3);
       color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom-left-radius: 60px;
-      border-bottom-right-radius: 60px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-
-    header img.logo {
-      width: 100px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 15px;
+    .toggle:hover {
+      background-color: rgba(255, 255, 255, 0.5);
     }
-
     h1 {
-      font-size: 2.2rem;
+      font-size: 28px;
+      margin-top: 80px;
+    }
+    .section {
+      background: var(--card-bg);
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark .section {
+      background: var(--card-bg-dark);
+    }
+    h2 {
+      color: var(--primary-color);
+      font-size: 22px;
       margin-bottom: 10px;
     }
-
-    .section {
-      background: var(--card-light);
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-      transition: all 0.4s ease;
-    }
-
-    body.dark .section {
-      background: var(--card-dark);
-    }
-
-    .section:hover {
-      transform: translateY(-5px);
-    }
-
-    h2 {
-      color: var(--primary);
-      font-size: 1.6rem;
-      margin-bottom: 15px;
-    }
-
     p, li {
-      font-size: 1rem;
-      margin-bottom: 14px;
+      font-size: 15px;
+      margin-bottom: 10px;
     }
-
     img {
-      width: 100%;
-      max-width: 420px;
-      margin: 20px auto;
-      border-radius: 15px;
-      display: block;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
     }
-
     ul {
       padding-left: 20px;
-      list-style: square;
     }
-
-    .note {
-      background-color: var(--highlight);
-      color: #333;
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 30px;
-      font-style: italic;
-    }
-
     .btn {
       display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 12px 22px;
-      border-radius: 30px;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 25px;
       text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s ease;
+      margin-top: 10px;
+      transition: background 0.3s;
     }
-
     .btn:hover {
-      background: var(--accent);
+      background: #005bb5;
     }
-
-    .scroll-banner {
-      width: 100%;
-      background: #dbeafe;
-      color: #1e3a8a;
-      padding: 12px;
-      text-align: center;
-      font-weight: 600;
-      white-space: nowrap;
+    .note {
+      background-color: #fff9c4;
+      padding: 16px;
+      border-left: 6px solid #fdd835;
+      border-radius: 15px;
+      font-style: italic;
+      margin-top: 30px;
+    }
+    .scroll-box {
       overflow: hidden;
-      box-sizing: border-box;
-      animation: scroll-left 18s linear infinite;
+      white-space: nowrap;
+      background: #dff6ff;
+      padding: 10px;
+      color: #004c99;
+      font-weight: bold;
     }
-
-    .scroll-banner a {
-      color: #0d9488;
-      margin-left: 15px;
-      text-decoration: underline;
+    .scroll-box span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollText 20s linear infinite;
     }
-
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+    @keyframes scrollText {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
     }
-
     footer {
       text-align: center;
       font-size: 14px;
-      padding: 25px;
+      padding: 20px;
       background: #f1f1f1;
       margin-top: 40px;
-      color: #444;
     }
-
-    body.dark footer {
-      background: #2e2e2e;
-      color: #ccc;
+    .toc {
+      background: #e7f3ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px auto;
+      max-width: 800px;
     }
-
-    @media (max-width: 600px) {
-      .section {
-        margin: 20px;
-        padding: 20px;
-      }
-      header h1 {
-        font-size: 1.5rem;
-      }
+    .toc h2 {
+      margin-bottom: 10px;
+    }
+    .toc ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    .toc a {
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+    /* Modern Feature Styles */
+    .feature-card {
+      background: var(--card-bg);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-  <div class="toggle" onclick="toggleMode()">🌞 / 🌙</div>
-
+  <div class="toggle" onclick="toggleMode()" id="themeToggle">🌙</div>
   <header>
-    <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo">
-    <h1>HTML Mastery Starts Here</h1>
-    <p>🚀 A beautiful, beginner-friendly guide to mastering HTML step by step.</p>
-  </header>
-
-  <div class="section">
-    <h2>👋 Welcome Future Developer</h2>
-    <p>This guide is designed just for you — the beginner with a dream to build websites. You'll learn the basics clearly and confidently. Let’s begin your journey to becoming a developer.</p>
-  </div>
-
-  <div class="section">
-    <h2>🎥 Step 1: Watch Tutorial Videos</h2>
-    <p>Start with visual tutorials from <strong>EJ Media</strong> to understand the structure of an HTML document and how web pages work.</p>
-    <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch HTML Tutorials">
-    <a href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank" class="btn">📺 Watch Now</a>
-  </div>
-
-  <div class="section">
-    <h2>💻 Step 2: Practice the Code</h2>
-    <p>Don’t just watch—open your code editor and try writing HTML yourself. Try tags like <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, and <code>&lt;a&gt;</code>.</p>
-    <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice HTML Coding">
-  </div>
-
-  <div class="section">
-    <h2>🧠 Step 3: Learn the Essentials</h2>
-    <p>Understand how HTML is structured with elements like:</p>
+    <div class="logo-container">
+      <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo">
+      <small>Kofi</small>
+    </div>
+    <h1>How to Master HTML</h1>
+    <p>✨ Your friendly, modern guide to learning HTML</p>
+  </header>  <div class="toc">
+    <h2>📚 Table of Contents</h2>
     <ul>
-      <li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></li>
-      <li><code>&lt;img&gt;</code> for images, <code>&lt;a&gt;</code> for links</li>
-      <li><code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, and more</li>
+      <li><a href="#features">Modern Features</a></li>
     </ul>
-  </div>
-
-  <div class="section">
-    <h2>⌨️ Step 4: Know the Keyboard Shortcuts</h2>
-    <p>Using shortcuts like <code>Ctrl+S</code> to save, <code>Ctrl+Z</code> to undo, and <code>Alt+Tab</code> to switch windows saves you time while coding.</p>
-  </div>
-
-  <div class="section">
-    <h2>🎯 Step 5: Set Your Goals</h2>
-    <ul>
-      <li>Build your personal portfolio website</li>
-      <li>Move on to CSS & JavaScript</li>
-      <li>Apply for internships or freelance jobs</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>📚 Recommended Learning</h2>
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs – HTML</a></li>
-      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools – HTML</a></li>
-    </ul>
-    <p><strong>Tip:</strong> Sacrifice time, energy, and even money for learning. It will all pay off.</p>
-  </div>
-
-  <div class="scroll-banner">
-    📘 Want to go further? Buy this HTML & CSS Book on Amazon:
-    <a href="https://www.amazon.com/HTML-CSS/dp/3827332141" target="_blank">Design and Build Websites by Jon Duckett</a>
-  </div>
-
-  <div class="section note">
-    <strong>Motivation:</strong> Take breaks, but never stop. One tag at a time, you're getting closer to becoming a great web developer! 💪
-  </div>
-
-  <footer>
-    Crafted with dedication by Kofi Adu Serbeh. Made with ❤️ in Ghana.
-  </footer>
-
-  <script>
+  </div>  <div class="section" id="features">
+    <h2>🧩 Modern Features of This Website</h2>
+    <div class="feature-card">
+      <h3>🌗 Dark & Light Mode Toggle</h3>
+      <p>Easily switch between light and dark modes for better accessibility and user experience.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📱 Mobile-Responsive Design</h3>
+      <p>Works beautifully across devices — from mobile to desktop — with adaptive layout.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🎥 Embedded Video Learning</h3>
+      <p>Direct link to beginner-friendly HTML tutorials like EJ Media's course on YouTube.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔄 Smooth Scroll Marquee</h3>
+      <p>A scrolling announcement bar gives helpful tips as you explore.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📚 Clean Table of Contents</h3>
+      <p>Organized navigation to quickly jump to what matters most.</p>
+    </div>
+    <div class="feature-card">
+      <h3>⚡ Optimized SEO Tags</h3>
+      <p>Meta tags ensure the site ranks well in search engines and social previews.</p>
+    </div>
+  </div>  <div class="scroll-box">
+    <span>📢 Tip: Try building a portfolio to showcase what you learn step by step!</span>
+  </div>  <footer>
+    Crafted with care and love by Kofi Serbeh ❤️
+  </footer>  <script>
     function toggleMode() {
-      document.body.classList.toggle('dark');
+      const body = document.body;
+      const toggleBtn = document.getElementById("themeToggle");
+      body.classList.toggle('dark');
+      toggleBtn.textContent = body.classList.contains('dark') ? '🌞' : '🌙';
     }
-  </script>
-</body>
+  </script></body>
 </html>
