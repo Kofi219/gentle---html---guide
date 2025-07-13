@@ -5,230 +5,270 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="W8nHLxdw06fS_2tTdcUJacD4yqS9pNnUsfZPWcT7EL8" />
   <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-  <meta name="description" content="Master HTML with this beginner-friendly, visually rich guide packed with tips, tutorials, and motivation to build your first website confidently.">
-  <meta name="keywords" content="HTML tutorial, learn HTML, beginner web development, HTML tags, build website">
+  <meta name="description" content="Master HTML with this easy, beginner-friendly guide full of clear explanations, visuals, and helpful resources to get you started in web development.">
+  <meta name="keywords" content="learn HTML, HTML tutorial, web development, beginner web design, HTML for beginners, Kofi Serbeh">
   <meta name="author" content="Kofi Adu Serbeh">
-  <meta property="og:title" content="How to Master HTML - Beginner Friendly Guide" />
-  <meta property="og:description" content="Learn HTML from scratch with simple explanations, visuals, and motivation. Start building your website today!" />
+  <meta property="og:title" content="Learn HTML the Easy Way - Full Beginner Guide" />
+  <meta property="og:description" content="Learn HTML from scratch with simple tutorials and tips. Start building your own website today!" />
   <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
   <meta property="og:url" content="https://kofi219.github.io/gentle---html---guide/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Master HTML with Confidence" />
-  <meta name="twitter:description" content="A beautiful guide for beginners to learn HTML and build websites easily." />
+  <meta name="twitter:title" content="HTML Guide for Beginners" />
+  <meta name="twitter:description" content="Start learning HTML easily and build your first website step-by-step." />
   <meta name="twitter:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
   <link rel="canonical" href="https://kofi219.github.io/gentle---html---guide/" />
-  <title>How to Master HTML - Beginner Friendly Guide</title>
+  <title>HTML Made Simple – Beginner Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary-color: #0077c2;
-      --accent-color: #00bcd4;
-      --light-bg: #f8fcff;
-      --dark-bg: #121212;
-      --light-text: #2e3d49;
-      --dark-text: #e0e0e0;
-      --card-bg: #ffffff;
-      --card-bg-dark: #1f1f1f;
+      --primary: #2a7fc1;
+      --accent: #22d3ee;
+      --light-bg: #f7fafc;
+      --dark-bg: #1a1a1a;
+      --text-light: #333;
+      --text-dark: #eee;
+      --card-light: #ffffff;
+      --card-dark: #262626;
+      --highlight: #facc15;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--light-bg);
-      color: var(--light-text);
-      font-size: 16px;
+      color: var(--text-light);
+      transition: all 0.5s ease;
       line-height: 1.6;
-      transition: background 0.5s, color 0.5s;
     }
+
     body.dark {
       background: var(--dark-bg);
-      color: var(--dark-text);
+      color: var(--text-dark);
     }
-    header {
-      background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-      animation: fadeInDown 1s ease-out;
-    }
-    header img.logo {
-      width: 90px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      margin-bottom: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
+
     .toggle {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
-      font-size: 22px;
+      font-size: 1.4rem;
       cursor: pointer;
+      z-index: 999;
     }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+
+    header img.logo {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 15px;
+    }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
+
     .section {
-      background: var(--card-bg);
-      margin: 35px auto;
-      max-width: 800px;
-      padding: 20px 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, background 0.5s, color 0.5s;
+      background: var(--card-light);
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s ease;
     }
+
     body.dark .section {
-      background: var(--card-bg-dark);
+      background: var(--card-dark);
     }
+
     .section:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
+
     h2 {
-      color: var(--primary-color);
-      font-size: 22px;
-      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
     }
+
     p, li {
-      font-size: 16px;
-      margin-bottom: 10px;
+      font-size: 1rem;
+      margin-bottom: 14px;
     }
+
     img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      display: block;
+      max-width: 420px;
       margin: 20px auto;
+      border-radius: 15px;
+      display: block;
       box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
     }
-    img:hover {
-      transform: scale(1.03);
-    }
+
     ul {
-      list-style: square;
       padding-left: 20px;
+      list-style: square;
     }
+
     .note {
-      background-color: #fff9c4;
-      border-left: 6px solid #fdd835;
-      padding: 16px;
+      background-color: var(--highlight);
+      color: #333;
+      padding: 20px;
       border-radius: 15px;
       margin-top: 30px;
       font-style: italic;
     }
+
     .btn {
       display: inline-block;
-      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      background: var(--primary);
       color: white;
-      padding: 10px 20px;
+      padding: 12px 22px;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      margin-top: 10px;
+      font-weight: 600;
+      transition: 0.3s ease;
     }
+
     .btn:hover {
-      background: linear-gradient(45deg, #0277bd, #00acc1);
+      background: var(--accent);
     }
+
+    .scroll-banner {
+      width: 100%;
+      background: #dbeafe;
+      color: #1e3a8a;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      animation: scroll-left 18s linear infinite;
+    }
+
+    .scroll-banner a {
+      color: #0d9488;
+      margin-left: 15px;
+      text-decoration: underline;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
       font-size: 14px;
-      background-color: #f3f3f3;
-      border-top: 2px solid #ccc;
+      padding: 25px;
+      background: #f1f1f1;
       margin-top: 40px;
+      color: #444;
     }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    body.dark footer {
+      background: #2e2e2e;
+      color: #ccc;
     }
+
     @media (max-width: 600px) {
       .section {
         margin: 20px;
         padding: 20px;
       }
       header h1 {
-        font-size: 20px;
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="toggle" onclick="toggleMode()">🌞 / 🌚</div>
+  <div class="toggle" onclick="toggleMode()">🌞 / 🌙</div>
+
   <header>
     <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo" class="logo">
-    <h1>How to Become a Master in HTML</h1>
-    <p>✨ Your friendly, modern guide to HTML mastery!</p>
+    <h1>HTML Mastery Starts Here</h1>
+    <p>🚀 A beautiful, beginner-friendly guide to mastering HTML step by step.</p>
   </header>
 
   <div class="section">
-    <h2>👋 Welcome to Your HTML Journey</h2>
-    <p>This guide is made just for you — a beginner ready to conquer HTML! Learn step by step with confidence.</p>
+    <h2>👋 Welcome Future Developer</h2>
+    <p>This guide is designed just for you — the beginner with a dream to build websites. You'll learn the basics clearly and confidently. Let’s begin your journey to becoming a developer.</p>
   </div>
 
   <div class="section">
-    <h2>🎥 1. Watch Tutorial Videos</h2>
-    <p>Start with tutorials from <strong>EJ Media</strong>. They explain everything clearly.</p>
-    <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch tutorials">
-    <a class="btn" href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank">📺 Watch Now</a>
+    <h2>🎥 Step 1: Watch Tutorial Videos</h2>
+    <p>Start with visual tutorials from <strong>EJ Media</strong> to understand the structure of an HTML document and how web pages work.</p>
+    <img src="https://i.imgur.com/frmacm2.jpg" alt="Watch HTML Tutorials">
+    <a href="https://youtu.be/-USAeFpVf_A?si=UzOxVmZuKJ5T7Gyd" target="_blank" class="btn">📺 Watch Now</a>
   </div>
 
   <div class="section">
-    <h2>💻 2. Practice With the Code</h2>
-    <p>Don’t just watch — type along and experiment to truly learn!</p>
-    <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice coding">
+    <h2>💻 Step 2: Practice the Code</h2>
+    <p>Don’t just watch—open your code editor and try writing HTML yourself. Try tags like <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, and <code>&lt;a&gt;</code>.</p>
+    <img src="https://i.imgur.com/kfDgma5.jpg" alt="Practice HTML Coding">
   </div>
 
   <div class="section">
-    <h2>🧠 3. Learn Basic Tags</h2>
-    <p>Understand tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
-  </div>
-
-  <div class="section">
-    <h2>⌨️ 4. Know Keyboard Shortcuts</h2>
-    <p>Learn helpful symbols and shortcuts like <code>Ctrl+S</code>, <code>Ctrl+V</code>, and more.</p>
-  </div>
-
-  <div class="section">
-    <h2>🚀 5. Set Your Web Dev Goals</h2>
+    <h2>🧠 Step 3: Learn the Essentials</h2>
+    <p>Understand how HTML is structured with elements like:</p>
     <ul>
-      <li>Create your personal portfolio</li>
-      <li>Learn CSS & JavaScript next</li>
-      <li>Inspire others with your progress</li>
+      <li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></li>
+      <li><code>&lt;img&gt;</code> for images, <code>&lt;a&gt;</code> for links</li>
+      <li><code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, and more</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2>🎯 Resources</h2>
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
-      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
-    </ul>
-    <p><strong>Tip:</strong> Make time to learn — and invest in your growth. One great way is to read expert books like the one below.</p>
+    <h2>⌨️ Step 4: Know the Keyboard Shortcuts</h2>
+    <p>Using shortcuts like <code>Ctrl+S</code> to save, <code>Ctrl+Z</code> to undo, and <code>Alt+Tab</code> to switch windows saves you time while coding.</p>
   </div>
 
-  <!-- BOOK PROMO SECTION -->
   <div class="section">
-    <h2>📘 Recommended Book</h2>
-    <p>If you're serious about mastering HTML & CSS, I highly recommend this amazing book:</p>
-    <a class="btn" href="https://www.amazon.com/HTML-CSS/dp/3827332141" target="_blank">
-      HTML & CSS: Design and Build Websites by Jon Duckett
-    </a>
+    <h2>🎯 Step 5: Set Your Goals</h2>
+    <ul>
+      <li>Build your personal portfolio website</li>
+      <li>Move on to CSS & JavaScript</li>
+      <li>Apply for internships or freelance jobs</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📚 Recommended Learning</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs – HTML</a></li>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools – HTML</a></li>
+    </ul>
+    <p><strong>Tip:</strong> Sacrifice time, energy, and even money for learning. It will all pay off.</p>
+  </div>
+
+  <div class="scroll-banner">
+    📘 Want to go further? Buy this HTML & CSS Book on Amazon:
+    <a href="https://www.amazon.com/HTML-CSS/dp/3827332141" target="_blank">Design and Build Websites by Jon Duckett</a>
   </div>
 
   <div class="section note">
-    <strong>Motivation:</strong> Breaks are okay. Keep learning, one tag at a time. 💪
+    <strong>Motivation:</strong> Take breaks, but never stop. One tag at a time, you're getting closer to becoming a great web developer! 💪
   </div>
 
   <footer>
-    Crafted with care and love by Kofi Serbeh ❤️
+    Crafted with dedication by Kofi Serbeh. Made with ❤️ in Ghana.
   </footer>
 
   <script>
