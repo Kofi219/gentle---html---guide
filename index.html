@@ -67,12 +67,17 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      background-color: rgba(255, 255, 255, 0.3);
-      color: #fff;
+      background: rgba(255,255,255,0.3);
+      color: white;
+      font-size: 20px;
       padding: 6px 12px;
       border-radius: 20px;
-      font-size: 16px;
       cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .toggle:hover {
+      background: rgba(255,255,255,0.5);
     }
     h1 {
       font-size: 26px;
@@ -147,6 +152,7 @@
 </head>
 <body>
   <div class="toggle" onclick="toggleMode()" id="themeToggle">🌙</div>
+
   <header>
     <div class="logo-container">
       <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo">
@@ -208,8 +214,8 @@
     function toggleMode() {
       const body = document.body;
       const toggleBtn = document.getElementById("themeToggle");
-      body.classList.toggle('dark');
-      toggleBtn.textContent = body.classList.contains('dark') ? '🌞' : '🌙';
+      const isDark = body.classList.toggle('dark');
+      toggleBtn.textContent = isDark ? '🌞' : '🌙';
     }
   </script>
 </body>
