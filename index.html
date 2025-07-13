@@ -1,48 +1,43 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="W8nHLxdw06fS_2tTdcUJacD4yqS9pNnUsfZPWcT7EL8" />
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="Master HTML with this beginner-friendly, visually rich guide packed with tips, tutorials, and motivation to build your first website confidently.">
+  <meta name="description" content="Master HTML with this beginner-friendly, modern guide packed with tutorials, motivation, and best practices.">
   <meta name="author" content="Kofi Adu Serbeh">
-  <meta property="og:title" content="How to Master HTML - Beginner Friendly Guide" />
-  <meta property="og:description" content="Learn HTML from scratch with simple explanations, visuals, and motivation. Start building your website today!" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Master HTML – Beginner Friendly Guide" />
+  <meta property="og:description" content="Learn HTML visually with easy steps, video tutorials, and motivation to build confidently!" />
   <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
-  <meta property="og:url" content="https://kofi219.github.io/gentle---html---guide/" />
+  <meta property="og:url" content="https://kofi219.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>How to Master HTML - Beginner Friendly Guide</title>
+  <title>Mastering HTML – Friendly Beginner Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #2a82da;
-      --accent-color: #00bcd4;
-      --light-bg: #f5faff;
-      --dark-bg: #121212;
-      --light-text: #222;
-      --dark-text: #eee;
-      --card-bg: #ffffff;
-      --card-bg-dark: #1e1e1e;
+      --primary: #1e88e5;
+      --accent: #00bcd4;
+      --bg-light: #f5faff;
+      --bg-dark: #121212;
+      --text-light: #222;
+      --text-dark: #eee;
+      --card: #fff;
+      --card-dark: #1e1e1e;
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--light-bg);
-      color: var(--light-text);
+      background: var(--bg-light);
+      color: var(--text-light);
       transition: background 0.3s, color 0.3s;
-      line-height: 1.6;
       font-size: 15px;
     }
     body.dark {
-      background: var(--dark-bg);
-      color: var(--dark-text);
+      background: var(--bg-dark);
+      color: var(--text-dark);
     }
     header {
-      background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+      background: linear-gradient(120deg, var(--primary), var(--accent));
       padding: 60px 20px 80px;
       color: white;
       border-bottom-left-radius: 40px;
@@ -63,9 +58,10 @@
       border: 3px solid white;
     }
     .logo-container small {
-      font-size: 12px;
+      font-size: 11px;
       color: #e0e0e0;
-      margin-top: 2px;
+      margin-top: 3px;
+      line-height: 1;
     }
     .toggle {
       position: absolute;
@@ -77,64 +73,52 @@
       border-radius: 20px;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s;
-    }
-    .toggle:hover {
-      background-color: rgba(255, 255, 255, 0.5);
     }
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       margin-top: 80px;
-    }
-    .section {
-      background: var(--card-bg);
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark .section {
-      background: var(--card-bg-dark);
-    }
-    h2 {
-      color: var(--primary-color);
-      font-size: 22px;
-      margin-bottom: 10px;
     }
     p, li {
       font-size: 15px;
       margin-bottom: 10px;
     }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 20px 0;
+    .section {
+      background: var(--card);
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s;
+    }
+    body.dark .section {
+      background: var(--card-dark);
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 10px;
     }
     ul {
       padding-left: 20px;
     }
-    .btn {
-      display: inline-block;
-      background: var(--primary-color);
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 25px;
+    a {
+      color: var(--primary);
       text-decoration: none;
-      margin-top: 10px;
-      transition: background 0.3s;
     }
-    .btn:hover {
-      background: #005bb5;
+    .toc {
+      background: #e3f2fd;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 30px auto;
     }
     .note {
-      background-color: #fff9c4;
+      background-color: #fff8c4;
       padding: 16px;
       border-left: 6px solid #fdd835;
-      border-radius: 15px;
+      border-radius: 10px;
       font-style: italic;
-      margin-top: 30px;
     }
     .scroll-box {
       overflow: hidden;
@@ -155,40 +139,9 @@
     }
     footer {
       text-align: center;
+      padding: 20px;
       font-size: 14px;
-      padding: 20px;
       background: #f1f1f1;
-      margin-top: 40px;
-    }
-    .toc {
-      background: #e7f3ff;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 30px auto;
-      max-width: 800px;
-    }
-    .toc h2 {
-      margin-bottom: 10px;
-    }
-    .toc ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-    .toc a {
-      text-decoration: none;
-      color: var(--primary-color);
-    }
-    /* Modern Feature Styles */
-    .feature-card {
-      background: var(--card-bg);
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    .feature-card h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
     }
   </style>
 </head>
@@ -199,49 +152,65 @@
       <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo">
       <small>Kofi</small>
     </div>
-    <h1>How to Master HTML</h1>
-    <p>✨ Your friendly, modern guide to learning HTML</p>
-  </header>  <div class="toc">
+    <h1>Mastering HTML -- Your Friendly Beginner Guide</h1>
+    <p>Simple, visual, and motivational – for all ages and levels</p>
+  </header>
+
+  <div class="toc">
     <h2>📚 Table of Contents</h2>
     <ul>
-      <li><a href="#features">Modern Features</a></li>
+      <li><a href="#why-html">Why Learn HTML?</a></li>
+      <li><a href="#what-html">What is HTML?</a></li>
+      <li><a href="#video">📺 Video Tutorial</a></li>
+      <li><a href="#resources">Helpful Book & Resources</a></li>
+      <li><a href="#motivation">Motivational Note</a></li>
     </ul>
-  </div>  <div class="section" id="features">
-    <h2>🧩 Modern Features of This Website</h2>
-    <div class="feature-card">
-      <h3>🌗 Dark & Light Mode Toggle</h3>
-      <p>Easily switch between light and dark modes for better accessibility and user experience.</p>
-    </div>
-    <div class="feature-card">
-      <h3>📱 Mobile-Responsive Design</h3>
-      <p>Works beautifully across devices — from mobile to desktop — with adaptive layout.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🎥 Embedded Video Learning</h3>
-      <p>Direct link to beginner-friendly HTML tutorials like EJ Media's course on YouTube.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🔄 Smooth Scroll Marquee</h3>
-      <p>A scrolling announcement bar gives helpful tips as you explore.</p>
-    </div>
-    <div class="feature-card">
-      <h3>📚 Clean Table of Contents</h3>
-      <p>Organized navigation to quickly jump to what matters most.</p>
-    </div>
-    <div class="feature-card">
-      <h3>⚡ Optimized SEO Tags</h3>
-      <p>Meta tags ensure the site ranks well in search engines and social previews.</p>
-    </div>
-  </div>  <div class="scroll-box">
-    <span>📢 Tip: Try building a portfolio to showcase what you learn step by step!</span>
-  </div>  <footer>
-    Crafted with care and love by Kofi Serbeh ❤️
-  </footer>  <script>
+  </div>
+
+  <div class="section" id="why-html">
+    <h2>💡 Why Learn HTML?</h2>
+    <p>HTML is the foundation of every website. Whether you're making a portfolio, a blog, or an online shop, HTML is where it begins. Knowing it helps you understand how the web works and gives you control to build things your way.</p>
+  </div>
+
+  <div class="section" id="what-html">
+    <h2>👋 What is HTML?</h2>
+    <p><strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It tells the browser what to show and how to structure a webpage.</p>
+  </div>
+
+  <div class="section" id="video">
+    <h2>🎬 Video Tutorial</h2>
+    <p>Begin your journey with this helpful intro from EJ Media:</p>
+    <iframe src="https://www.youtube.com/embed/-USAeFpVf_A" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="section" id="resources">
+    <h2>📘 Helpful Book & Resources</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
+      <li><a href="https://www.amazon.com/HTML-CSS-dp-3827332141" target="_blank">HTML & CSS by Jon Duckett</a></li>
+    </ul>
+  </div>
+
+  <div class="section note" id="motivation">
+    <strong>Motivation:</strong> Every expert was once a beginner. Stay consistent and don’t be afraid to make mistakes. That’s how you grow! 💪
+  </div>
+
+  <div class="scroll-box">
+    <span>💡 Tip: Build a personal site to apply everything you learn! Practice = Progress.</span>
+  </div>
+
+  <footer>
+    Made with care by Kofi Serbeh ❤️
+  </footer>
+
+  <script>
     function toggleMode() {
       const body = document.body;
       const toggleBtn = document.getElementById("themeToggle");
       body.classList.toggle('dark');
       toggleBtn.textContent = body.classList.contains('dark') ? '🌞' : '🌙';
     }
-  </script></body>
+  </script>
+</body>
 </html>
