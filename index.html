@@ -1,167 +1,302 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta name="google-site-verification" content="W8nHLxdw06fS_2tTdcUJacD4yqS9pNnUsfZPWcT7EL8" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Master HTML with this beginner-friendly, modern guide packed with tutorials, motivation, and best practices.">
-  <meta name="author" content="Kofi Adu Serbeh">
-  <meta name="keywords" content="Html, Mastering html, Resources" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Master HTML – Beginner Friendly Guide" />
-  <meta property="og:description" content="Learn HTML visually with easy steps, video tutorials, and motivation to build confidently!" />
-  <meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
-  <meta property="og:url" content="https://kofi219.github.io/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <title>Mastering HTML – Friendly Beginner Guide</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1e88e5;
-      --accent: #00bcd4;
-      --bg-light: #f5faff;
-      --bg-dark: #121212;
-      --text-light: #222;
-      --text-dark: #eee;
-      --card: #fff;
-      --card-dark: #1e1e1e;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: background 0.3s, color 0.3s;
-      font-size: 15px;
-    }
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Master HTML with this beginner-friendly, modern guide packed with tutorials, motivation, and best practices." />
+<meta name="author" content="Kofi Adu Serbeh" />
+<meta name="keywords" content="Html, Mastering html, Resources" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Master HTML – Beginner Friendly Guide" />
+<meta property="og:description" content="Learn HTML visually with easy steps, video tutorials, and motivation to build confidently!" />
+<meta property="og:image" content="https://i.imgur.com/vd0qkfJ.jpg" />
+<meta property="og:url" content="https://kofi219.github.io/gentle---html---guide" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#1e88e5" />
+<title>Mastering HTML – Friendly Beginner Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --primary: #1e88e5;
+    --accent: #00bcd4;
+    --bg-light: #f5faff;
+    --bg-dark: #121212;
+    --text-light: #222;
+    --text-dark: #eee;
+    --card: #fff;
+    --card-dark: #1e1e1e;
+    --scroll-bg: #dff6ff;
+    --scroll-text: #004c99;
+    --note-bg: #fff8c4;
+    --note-border: #fdd835;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: background 0.3s, color 0.3s;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 80px; /* footer space */
+  }
+  body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  header {
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    padding: 60px 20px 80px;
+    color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  /* Dark mode toggle on the left */
+  .toggle {
+    background: rgba(255,255,255,0.3);
+    color: white;
+    font-size: 22px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    user-select: none;
+    margin-top: 20px;
+  }
+  .toggle:hover {
+    background: rgba(255,255,255,0.5);
+  }
+  /* Logo container on the right */
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .logo-container img {
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+  .logo-container small {
+    font-size: 11px;
+    color: #e0e0e0;
+    margin-top: 2px;
+    line-height: 1;
+  }
+  /* Header text centered and takes full width */
+  header > h1, header > p {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-top: 60px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 18px;
+    margin-top: 6px;
+  }
+  main, nav, footer {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  nav.toc {
+    background: #e3f2fd;
+    padding: 22px 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  nav.toc h2 {
+    margin-bottom: 16px;
+    color: var(--primary);
+  }
+  nav.toc ul {
+    padding-left: 20px;
+  }
+  nav.toc a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  nav.toc a:hover,
+  nav.toc a:focus {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  section.section {
+    background: var(--card);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    margin-bottom: 40px;
+    transition: background 0.3s;
+  }
+  body.dark section.section {
+    background: var(--card-dark);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  }
+  section.section h2 {
+    color: var(--primary);
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  p, li {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  section.note {
+    background-color: var(--note-bg);
+    padding: 18px 20px;
+    border-left: 6px solid var(--note-border);
+    border-radius: 12px;
+    font-style: italic;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+  }
+  .scroll-box {
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--scroll-bg);
+    padding: 14px 10px;
+    color: var(--scroll-text);
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 30px auto;
+  }
+  .scroll-box span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 20s linear infinite;
+  }
+  @keyframes scrollText {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  footer {
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 14px;
+    background: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+  }
+  body.dark footer {
+    background: #222;
+    color: var(--text-dark);
+    box-shadow: 0 -1px 5px rgba(255,255,255,0.1);
+  }
+  /* Back to Top button */
+  #backToTop {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 999;
+    transition: background 0.3s;
+  }
+  #backToTop:hover {
+    background: var(--accent);
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
     header {
-      background: linear-gradient(120deg, var(--primary), var(--accent));
-      padding: 60px 20px 80px;
-      color: white;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      position: relative;
-    }
-    .logo-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: flex;
+      padding: 50px 15px 70px;
       flex-direction: column;
       align-items: center;
     }
-    .logo-container img {
-      width: 60px;
-      border-radius: 50%;
-      border: 3px solid white;
-    }
-    .logo-container small {
-      font-size: 11px;
-      color: #e0e0e0;
-      margin-top: 2px;
-      line-height: 1;
-    }
     .toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.3);
-      color: white;
-      font-size: 20px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background 0.3s;
-      user-select: none;
+      order: 1;
+      margin-top: 0;
+      margin-bottom: 15px;
     }
-    .toggle:hover {
-      background: rgba(255,255,255,0.5);
+    .logo-container {
+      order: 2;
+      margin-top: 0;
+    }
+    header > h1, header > p {
+      margin-top: 30px;
     }
     h1 {
-      font-size: 26px;
-      margin-top: 80px;
+      font-size: 22px;
     }
-    p, li {
-      font-size: 15px;
-      margin-bottom: 10px;
+    p {
+      font-size: 16px;
     }
-    .section {
-      background: var(--card);
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-      transition: background 0.3s;
+    main, nav, footer {
+      margin: 20px 15px;
+      padding: 0;
     }
-    body.dark .section {
-      background: var(--card-dark);
+    section.section {
+      padding: 25px 20px;
+      margin-bottom: 30px;
     }
-    h2 {
-      color: var(--primary);
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .toc {
-      background: #e3f2fd;
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 800px;
-      margin: 30px auto;
-    }
-    .note {
-      background-color: #fff8c4;
-      padding: 16px;
-      border-left: 6px solid #fdd835;
-      border-radius: 10px;
-      font-style: italic;
+    nav.toc {
+      margin: 20px 15px;
+      padding: 20px 15px;
     }
     .scroll-box {
-      overflow: hidden;
-      white-space: nowrap;
-      background: #dff6ff;
-      padding: 10px;
-      color: #004c99;
-      font-weight: bold;
-    }
-    .scroll-box span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scrollText 20s linear infinite;
-    }
-    @keyframes scrollText {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
+      margin: 20px 15px;
+      padding: 12px 8px;
     }
     footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      background: #f1f1f1;
+      font-size: 13px;
+      padding: 18px 10px;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="toggle" onclick="toggleMode()" id="themeToggle">🌙</div>
+  <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+  <div class="toggle" onclick="toggleMode()" id="themeToggle" aria-label="Toggle dark and light mode" role="button" tabindex="0">🌙</div>
   <header>
-    <div class="logo-container">
-      <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Logo">
-      <small>Kofi</small>
-    </div>
     <h1>Mastering HTML -- Your Friendly Beginner Guide</h1>
     <p>Simple, visual, and motivational – for all ages and levels</p>
+    <div class="logo-container">
+      <img src="https://i.imgur.com/vd0qkfJ.jpg" alt="Kofi logo" />
+      <small>Kofi</small>
+    </div>
   </header>
-  <div class="toc">
+  <nav class="toc" aria-label="Table of contents">
     <h2>📚 Table of Contents</h2>
     <ul>
       <li><a href="#why-html">Why Learn HTML?</a></li>
@@ -171,53 +306,80 @@
       <li><a href="#motivation">Motivational Note</a></li>
       <li><a href="#next">What to do next</a></li>
     </ul>
-  </div>
-  <div class="section" id="why-html">
-    <h2>💡 Why Learn HTML?</h2>
-    <p>HTML is the foundation of every website. Whether you're making a portfolio, a blog, or an online shop, HTML is where it begins. Knowing it helps you understand how the web works and gives you control to build things your way.</p>
-  </div>
-  <div class="section" id="what-html">
-    <h2>👋 What is HTML?</h2>
-    <p><strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It tells the browser what to show and how to structure a webpage.</p>
-  </div>
-  <div class="section" id="video">
-    <h2>🎬 Video Tutorial</h2>
-    <p>Begin your journey with this helpful intro from EJ Media:</p>
-    <iframe src="https://www.youtube.com/embed/-USAeFpVf_A" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="section" id="resources">
-    <h2>📘 Helpful Book & Resources</h2>
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
-      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
-      <li><a href="https://www.amazon.com/HTML-CSS-dp-3827332141" target="_blank">HTML & CSS by Jon Duckett</a></li>
-    </ul>
-  </div>
-  <div class="section note" id="motivation">
-    <strong>Motivation:</strong> Every expert was once a beginner. Stay consistent and don't be afraid to make mistakes. That's how you grow! 💪
-  </div>
-  <div class="section note" id="next">
-    <strong>What to do next:</strong><br><br>
-    <ul>
-      <li>Learn the basics of Cascading Style Sheets (CSS).</li>
-      <li>Learn the basics of JavaScript.</li>
-      <li>Try building your first website.</li>
-      <li>Then go deeper into HTML, CSS, and JavaScript if you enjoy it.</li>
-    </ul>
-  </div>
-  <div class="scroll-box">
+  </nav>
+  <main>
+    <section class="section" id="why-html" tabindex="-1">
+      <h2>💡 Why Learn HTML?</h2>
+      <p>HTML is the foundation of every website. Whether you're making a portfolio, a blog, or an online shop, HTML is where it begins. Knowing it helps you understand how the web works and gives you control to build things your way.</p>
+    </section>
+    <section class="section" id="what-html" tabindex="-1">
+      <h2>👋 What is HTML?</h2>
+      <p><strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It tells the browser what to show and how to structure a webpage.</p>
+    </section>
+    <section class="section" id="video" tabindex="-1">
+      <h2>🎬 Video Tutorial</h2>
+      <p>Begin your journey with this helpful intro from EJ Media:</p>
+      <iframe src="https://www.youtube.com/embed/-USAeFpVf_A" width="100%" height="300" frameborder="0" allowfullscreen title="EJ Media HTML Intro"></iframe>
+    </section>
+    <section class="section" id="resources" tabindex="-1">
+      <h2>📘 Helpful Book & Resources</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+        <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">W3Schools HTML</a></li>
+        <li><a href="https://www.amazon.com/HTML-CSS-dp-3827332141" target="_blank" rel="noopener noreferrer">HTML & CSS by Jon Duckett</a></li>
+      </ul>
+    </section>
+    <section class="section note" id="motivation" tabindex="-1">
+      <strong>Motivation:</strong> Every expert was once a beginner. Stay consistent and don't be afraid to make mistakes. That's how you grow! 💪
+    </section>
+    <section class="section note" id="next" tabindex="-1">
+      <strong>What to do next:</strong>
+      <ul>
+        <li>Learn the basics of Cascading Style Sheets (CSS).</li>
+        <li>Learn the basics of JavaScript.</li>
+        <li>Try building your first website.</li>
+        <li>Then go deeper into HTML, CSS, and JavaScript if you enjoy it.</li>
+      </ul>
+    </section>
+  </main>
+  <div class="scroll-box" aria-label="Scrolling tip">
     <span>💡 Tip: Build a personal site to apply everything you learn! Practice = Progress.</span>
   </div>
   <footer>
     Made with care by  <strong><em>Kofi Adu Serbeh ❤️</em></strong>
   </footer>
-  <script>
-    function toggleMode() {
-      const body = document.body;
-      const toggleBtn = document.getElementById("themeToggle");
-      const isDark = body.classList.toggle('dark');
-      toggleBtn.textContent = isDark ? '🌞' : '🌙';
+<script>
+  // Dark/Light mode toggle
+  function toggleMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById("themeToggle");
+    const isDark = body.classList.toggle('dark');
+    toggleBtn.textContent = isDark ? '🌞' : '🌙';
+  }
+
+  // Back to Top button functionality
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
     }
-  </script>
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Keyboard accessibility for toggle button
+  const toggleBtn = document.getElementById('themeToggle');
+  toggleBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMode();
+    }
+  });
+</script>
 </body>
-</html> 
+</html>
